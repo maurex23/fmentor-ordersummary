@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: 'Red Hat Display', sans-serif;
+}
+
+
+
+html {
+    background: url(images/pattern-background-desktop.svg) no-repeat top;
+    background-size: contain;
+    position: fixed;
+    z-index: -1;
+}
+
+body {
+    background-color: rgba(0, 0, 255, 0.2);
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    background-color: white;
+    max-width: 448px;
+    height: fit-content;
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: "image"
+                         "main"
+                         "plan"
+                         "payment";
+}
+
+figure {
+    width: 100%;
+    height: 200px;
+    grid-area: image;
+}
+
+figure img {
+    width: 100%;
+    border-radius: 20px 20px 0 0;
+}
+
+.main {
+    grid-area: main;
+    width: 70%;
+    margin: 50px auto 0;
+}
+
+.main h1 {
+    padding: 20px;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.main p {
+    color: hsl(223, 47%, 23%);
+    text-align: center;
+    line-height: 30px;
+}
+
+.plan {
+    background: hsl(225, 100%, 98%);
+    grid-area: plan;
+    margin: 20px 50px;
+    padding: 30px 20px;
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-areas: 'icon h2 a'
+                        'icon p a';
+}
+
+.plan img {
+    grid-area: icon;
+}
+
+.plan h2 {
+    grid-area: h2;
+    font-size: 1rem;
+}
+
+.plan p {
+    grid-area: p;
+    font-size: .9rem;
+}
+
+.plan a {
+    font-weight: 700;
+    grid-area: a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: hsl(245, 75%, 52%);
+}
+
+.plan a:active {
+    text-decoration: none;
+    color:hsl(228, 45%, 44%)
+}
+
+.payment {
+    grid-area: payment;
+    margin: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.payment button {
+    background-color: hsl(245, 75%, 52%);
+    color: white;
+    font-size: 1rem;
+    padding: 13px 90px;
+    border: transparent;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+button:active {
+    background-color: rgba(56, 41, 224, 0.5);
+}
+
+.payment a {
+    text-decoration: none;
+    font-weight: 700;
+    color: hsl(228, 45%, 44%);
+    margin-top: 20px
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+@media (max-width: 450px) {
+
+    html {
+        background: url(images/pattern-background-mobile.svg) no-repeat top;
+        background-size: contain;
+        position: fixed;
+        z-index: -1;
+    }
+
+    main {
+        width: 90%;
+        height: 80%;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: auto;
+        grid-template-areas: "image"
+                             "main"
+                             "plan"
+                             "payment";
+    }
+
+    figure {
+        grid-area: image;
+        height: fit-content;
+    }
+
+    .main {
+        grid-area: main;
+        width: 100%;
+        margin-top: 0;
+    }
+
+    .main h1 {
+        font-size: 1.5rem;
+    }
+
+    .main p {
+        width: 80%;
+        margin: auto;
+    }
+
+    .plan {
+        grid-area: plan;
+        margin: 20px;
+        padding: 15px
+    }
+
+    .plan h2 {
+        text-align: center;
+    }
+
+    .plan p {
+        text-align: center;
+    }
+
+    .payment {
+        grid-area: payment;
+        width: 100%;
+        margin: 0;
+    }
+
+    .payment button {
+        margin: 0;
+        padding: 13px 70px;
+    }
+}
